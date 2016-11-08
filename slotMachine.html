@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style type="text/css">
+    body {
+          background: blue;
+          background: -moz-linear-gradient( top ,
+          rgba(255, 0, 0, 1) 0%,
+          rgba(255, 255, 0, 1) 15%,
+          rgba(0, 255, 0, 1) 30%,
+          rgba(0, 255, 255, 1) 50%,
+          rgba(0, 0, 255, 1) 65%,
+          rgba(255, 0, 255, 1) 80%,
+          rgba(255, 0, 0, 1) 100%);
+          background: -webkit-gradient(linear,  left top,  left bottom,
+          color-stop(0%, rgba(255, 0, 0, 1)),
+          color-stop(15%, rgba(255, 255, 0, 1)),
+          color-stop(30%, rgba(0, 255, 0, 1)),
+          color-stop(50%, rgba(0, 255, 255, 1)),
+          color-stop(65%, rgba(0, 0, 255, 1)),
+          color-stop(80%, rgba(255, 0, 255, 1)),
+          color-stop(100%, rgba(255, 0, 0, 1)));
+       height: 735px;
+      }
+
+      /*normal css stuff*/
+        .slot0 {border:2px}
+        .lCol {width: 500px; left: 1px; position: absolute;}
+        .rCol {width: 500px; right: 1px; position: absolute;}
+        .break {padding: 10px;}
+    </style>
+    <meta charset="UTF-8">
+    <title>Slot Machine</title>
+</head>
+<body>
+<form name=slots onsubmit="requirements();return false;">
+<table>
+    <tr>
+        <td class = "lCol">
+            <table>
+                <tr class="lTitle">
+                    <td>
+                      <h2>Hypothetically Sexy Slots On Your Device!</h2>
+                        <h4>How to Play</h4>
+                        1. place the amount of chips desired in to the "your bet" text box <br>
+                        2. click the button "spin it!" for the slots to randomize<br>
+                        3. rinse and repeat until the amount is desired or until you have ran out of chips <br>
+                        4. to restart the game, click the button "restart game"<br>
+                        5. to show current results, click the button "show current results"<br>
+                        <table class="break"><!--table for break-->
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            <table><!-- input for function result-->
+                <tr><th align=right> Chips: </th><td align=left>
+                    <input type=text size=10 name=gold value=25 readonly></td></tr>
+                <tr><th align=right> Your bet: </th><td align=left>
+                    <input type=text size=10 name=bet></td></tr>
+                <tr><th>
+                    <input type=submit value="Spin it!"></th>
+                    <th><input type=button value="show current results" onclick="result();"></th></tr>
+                <tr><th colspan=2> <input type=reset value="restart game"> </th></tr>
+                <tr><td colspan=2><hr></td></tr>
+                <tr><td colspan=2>
+            </table>
+            <table>
+                <tr class="slot0">
+                <td><img src="sunsetsarsaparilla.png" height="150" width ="150" name=slot1></td>
+                <td><img src="nukacola.png" height="150" width =150" name=slot2></td>
+                <td><img src="vaultec.png" height="150" width ="150" name=slot3></td>
+                </tr>
+            </table>
+            <input type=text readonly size=75 name="banner">
+       </td>
+        <td class = "rCol">
+            <br>
+            <table width=100% border=0>
+                <tr><th colspan=3></th></tr>
+                <tr><th> 3 of a kind </th>    <td>
+                    <img src=nukacola.png height= "60" width ="60">
+                    <img src=nukacola.png height= "60" width ="60">
+                    <img src=nukacola.png height= "60" width ="60">
+                </td><th> 10x your bet </th></tr>
+                <tr><th> 3 of a kind </th>    <td>
+                    <img src=sunsetsarsaparilla.png height= "60" width ="60">
+                    <img src=sunsetsarsaparilla.png height= "60" width ="60">
+                    <img src=sunsetsarsaparilla.png height= "60" width ="60">
+                </td><th> 10x your bet </th></tr>
+                <tr><th> 3 of a kind </th>    <td>
+                    <img src=vaultec.png height= "60" width ="60">
+                    <img src=vaultec.png height= "60" width ="60">
+                    <img src=vaultec.png height= "60" width ="60">
+                </td><th> 10x your bet </th></tr>
+                <tr><th> A pair </th> <td>
+                    <img src=sunsetsarsaparilla.png height= "60" width ="60">
+                    <img src=sunsetsarsaparilla.png height= "60" width ="60">
+                    <img src=nukacola.png height= "60" width ="60">
+                </td><th> 2x your bet </th></tr>
+                <tr><th> or </th>     <td>
+                    <img src=sunsetsarsaparilla.png height= "60" width ="60">
+                    <img src=sunsetsarsaparilla.png height= "60" width ="60">
+                    <img src=vaultec.png height= "60" width ="60">
+                </td><th> 2x your bet </th></tr>
+                <tr><th> or </th>     <td>
+                    <img src=nukacola.png height= "60" width ="60">
+                    <img src=nukacola.png height= "60" width ="60">
+                    <img src=sunsetsarsaparilla.png height= "60" width ="60">
+                </td><th> 2x your bet </th></tr>
+                <tr><th> or </th>     <td>
+                    <img src=nukacola.png height= "60" width ="60">
+                    <img src=nukacola.png height= "60" width ="60">
+                    <img src=vaultec.png height= "60" width ="60">
+                </td><th> 2x your bet </th></tr>
+                <tr><th> or </th>     <td>
+                    <img src=vaultec.png height= "60" width ="60">
+                    <img src=vaultec.png height= "60" width ="60">
+                    <img src=sunsetsarsaparilla.png height= "60" width ="60">
+                </td><th> 2x your bet </th></tr>
+                <tr><th> or </th>     <td>
+                    <img src=vaultec.png height= "60" width ="60">
+                    <img src=vaultec.png height= "60" width ="60">
+                    <img src=nukacola.png height= "60" width ="60">
+                </td><th> 2x your bet </th></tr>
+                <tr><th> No match </th>   <td>
+                    <img src=sunsetsarsaparilla.png height= "60" width ="60">
+                    <img src=nukacola.png height= "60" width ="60">
+                    <img src=vaultec.png height= "60" width ="60">
+                </td><th> You lose </th></tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</td></tr>
+</form>
+    <script>
+    var slotitem = ["0","nukacola","vaultec","sunsetsarsaparilla"];
+    document.slots.bet.focus();
+    startgold=25;
+    document.slots.gold.value=startgold;
+
+
+    function result () {
+
+        if (document.slots.gold.value < startgold)
+
+        {alert("You lost "+ (startgold-document.slots.gold.value) +" chips.   ");}
+
+        else     {alert("You gained "+ (document.slots.gold.value-startgold) +" chips.   ");}
+
+    }
+
+
+
+    function requirements () {
+        //1. replace document.slots.bet with a variable.
+        //2. Set variable equal to zero if document.slot.bet is not a number,  isNaN
+        var number = document.slots.bet.value;
+
+        try {
+        if (isNaN(number)) {alert("please enter a valid number"); return false;}
+
+        if (number <1 || document.slots.bet.value == "") {alert("You cannot bet less than 1.   "); return;}
+
+        if (Math.floor(document.slots.gold.value) < Math.floor(document.slots.bet.value)) {alert("Your bet "+document.slots.bet.value+" is larger than your remaining chip(s) "+document.slots.gold.value+".  "); return;}
+
+        if ((document.slots.bet.value>1)) {document.slots.banner.value="Bet is "+document.slots.bet.value+" chip(s)";}
+
+        else {((document.slots.banner.value="Bet is "+document.slots.bet.value+" chip(s)"));}
+
+        counter=0;
+
+        spin() ;
+    }
+    catch(err) {message.innerHTML = "input is" +err;
+    }}
+
+
+
+
+
+    //spins the slots and randomly chooses from 3 pictures
+    function spin() {
+
+        var turns1=10+Math.floor((Math.random() * 3)+1);
+
+        for (a=0;a<turns1;a++)
+
+        {document.slots.slot1.src=""+slotitem[a % 9]+".png"; }
+
+        var turns2=10+Math.floor((Math.random() * 3)+1);
+
+        for (b=0;b<turns2;b++)
+
+        {document.slots.slot2.src=""+slotitem[b % 9]+".png"; }
+
+        var turns3=10+Math.floor((Math.random() * 3)+1);
+
+        for (c=0;c<turns3;c++)
+
+        {document.slots.slot3.src=""+slotitem[c % 9]+".png"; }
+
+        counter++;
+
+        if (counter<25) {setTimeout("spin(counter);",50);} else {checkmatch();}
+
+    }
+
+
+
+
+
+    function checkmatch()    {
+
+        if ((document.slots.slot1.src == document.slots.slot2.src) && (document.slots.slot1.src == document.slots.slot3.src))
+
+        {document.slots.banner.value="3 of a kind - You won "+Math.floor(document.slots.bet.value*10)+" chips";
+
+            document.slots.gold.value=Math.floor(document.slots.gold.value)+Math.floor(document.slots.bet.value*10); }
+
+        else if ((document.slots.slot1.src == document.slots.slot2.src) ||
+
+                (document.slots.slot1.src == document.slots.slot3.src) ||
+
+                (document.slots.slot2.src == document.slots.slot3.src))
+
+        {document.slots.banner.value="A pair - You won "+Math.floor(document.slots.bet.value*2)+" chip(s)";
+
+            document.slots.gold.value = Math.floor(document.slots.bet.value*2) + Math.floor(document.slots.gold.value);}
+
+        else {document.slots.gold.value=document.slots.gold.value-document.slots.bet.value;
+
+            document.slots.banner.value="No match - You lost "+document.slots.bet.value+" chip(s)";}
+
+    }
+
+
+</script>
+</body>
+</html>
